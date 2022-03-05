@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .heading{
+            text-align: center;
+        }
+
+        .container{
+            border-radius: 5px;
+            background: #01575C;
+            padding: 20px;
+            margin-bottom: 300px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .form-text{
+            width: 95%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            margin-left: 20px;
+            font-size: 2em;
+        }
+
+        .save{
+            margin: auto;
+            font-size: 20px;
+            position: relative;
+            display: block;
+            width: 200px;
+            height: 36px;
+            border-radius: 18px;
+            background-color: #1c89ff;
+            border: solid 1px transparent;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all .1s ease-in-out;
+        }
+
+        .save:hover{
+            background-color: transparent;
+            border-color: #fff;
+            transition: all .1s ease-in-out;
+        }
+
+        label{
+            font-size: 2.5em;
+            margin-left: 25px;
+            color: white;
+        }
+
+        h1{
+            color: white;
+            font-size: 3em;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div style="margin-top: 200px" class="container">
+            <h1 class="heading">Update student</h1>
+
+            <div class="form-container">
+                <form th:action="@{/students/{id} (id=${id})}" th:object="${updateStud}" method="POST">
+                    <div class="form-info">
+                        <label>Student's first name</label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field = "*{firstname}"
+                                class="form-text"
+                                placeholder="Add student's first name"
+                        />
+                    </div>
+
+                    <div class="form-info">
+                        <label>Student's last name</label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field = "*{lastname}"
+                                class="form-text"
+                                placeholder="Add student's last name"
+                        />
+                    </div>
+                    <div class="form-info">
+                        <label>Student's </label>
+                        <input
+                                type="text"
+                                name="age"
+                                th:field = "*{age}"
+                                class="form-text"
+                                placeholder="Add student's age"
+                        />
+                    </div>
+                    <div class="form-info">
+                        <label>Student's email</label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field = "*{email}"
+                                class="form-text"
+                                placeholder="Add student's email"
+                        />
+                    </div>
+
+                    <div class="save-button">
+
+                        <button type="submit" class="save">Save changes</button>
+
+                    </div>
+
+                </form>
+    </div>
+</div>
+
+</body>
+</html>

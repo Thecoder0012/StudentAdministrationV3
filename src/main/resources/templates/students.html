@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>School students</title>
+
+    <link rel="stylesheet" href="student.css">
+    <script src="../src/jquery.scrollTableBody-1.0.0.js"></script>
+
+</head>
+<body>
+
+<div class="navbar">
+
+    <h1 class="navbar-heading">Student Administration System</h1>
+
+    <div class="top-side">
+        <a class="active" href="index">Home</a>
+        <a href="student">Students</a>
+        <a href="aboutus">About us</a>
+
+    </div>
+</div>
+
+
+<div style="margin-top: 200px" class="container">
+
+    <div class="stud-info">
+        <h1>Student information</h1>
+    </div>
+
+    <div class="add-student">
+        <a style="color: white" th:href="@{/students/new}" class="add-student-button">Add student</a>
+    </div>
+
+    <div style="overflow-y:scroll;">
+    <table  style="width:80%; margin-left: 150px">
+        <thead>
+        <tr>
+            <th>Student first name</th>
+            <th>Student last name</th>
+            <th>Student age</th>
+            <th>Student email</th>
+            <th>Update/Remove student</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="student: ${students}">
+            <td class="td-text" th:text="${student.firstname}"></td>
+            <td class="td-text" th:text="${student.lastname}"></td>
+            <td class="td-text" th:text="${student.age}"></td>
+            <td class="td-text" th:text="${student.email}"></td>
+            <td>
+                <a th:href="@{/students/update/{id} (id=${student.id})}"
+                   class="update-student">Update</a>
+
+                <a th:href="@{/student/{id}(id=${student.id})}"
+                   class="delete-student">Remove</a>
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
