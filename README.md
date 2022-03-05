@@ -1,6 +1,6 @@
 # Student Administration System v2
 
-A student project created with spring boot, MySql, java, thymeleaf, html and css. However this time I am using preparedstatements for the backend with the database instead of JdbcTemplate or JpaInterface.
+A student project created with spring boot where you will be able to do crud operations. Preparedstatements were used instead of JPA or jdbcTemplate.
 
 A project created with:
 
